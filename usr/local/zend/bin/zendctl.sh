@@ -45,6 +45,7 @@ case $1 in
 		$ECHO_CMD "Starting $PRODUCT_NAME $PRODUCT_VERSION ..\n"
 		$0 start-zdd %
 		$0 start-monitor-node
+		$MYSQL_EN && $0 start-mysql %
 		$0 start-apache %
 		$0 start-lighttpd %
 		$JB_EN && $0 start-jb %
@@ -56,6 +57,7 @@ case $1 in
 		$0 restart-zdd
 		$0 restart-monitor-node
 		$0 restart-apache
+		$0 restart-mysql
 		$0 restart-lighttpd
 		$0 restart-jb
 		$0 restart-jqd
@@ -99,6 +101,7 @@ case $1 in
 		$ZCE_PREFIX/bin/clean_semaphores.sh
 	        $0 stop-lighttpd %
 		$JB_EN && $0 stop-jb %
+			$MYSQL_EN && $0 stop-mysql
 			$0 stop-jqd %
 			$0 stop-zdd %
 			$0 stop-monitor-node %
