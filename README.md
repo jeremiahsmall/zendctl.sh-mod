@@ -6,7 +6,7 @@ zendctl.sh-mod
 * ZendServer 5.6
 * ZendServer 6.0
 
-# Update MySQL to control scripts 
+# Update control scripts to include MySQL
 
 By default, installers for affected versions will not add control of MySql start/stop/restarts along with all the other server components. There are two places where the Mac installer puts zendctl.sh scripts. The two versions differ slightly, so make sure you put each one in its respective path as shown in this repo.
 
